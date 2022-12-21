@@ -7,6 +7,6 @@ class SaleOrderLine(models.Model):
 
 @api.model
 def create(self, vals):
-    res = super(CalenderEVent, self).create(vals)
+    res = super(calendar.event, self).create(vals)
     # code here to create sale order
     return res
