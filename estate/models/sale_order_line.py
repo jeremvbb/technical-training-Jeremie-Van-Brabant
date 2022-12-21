@@ -9,5 +9,4 @@ class SaleOrderLine(models.Model):
 def create(self, vals):
     res = super(CalenderEVent, self).create(vals)
     # code here to create sale order
-    
     return res
