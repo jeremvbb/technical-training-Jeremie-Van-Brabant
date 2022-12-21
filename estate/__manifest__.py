@@ -7,6 +7,6 @@
     'version': '16.0.0.1',
     'license': 'LGPL-3',
     'depends': ['base', 'sale_management', 'calendar', 'hr'],
-    'data': [
+    'data': ["views/res_groups.xml", "views/sale_order.xml"
     ]
 }
