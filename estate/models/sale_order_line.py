@@ -5,8 +5,17 @@ class SaleOrderLine(models.Model):
     training_date = fields.Date(string="Training Date")
     employee = fields.Many2one("hr.employee", string="employee")
 
-@api.model
-def create(self, vals):
-    res = super(calendar.event, self).create(vals)
-    # code here to create sale order
-    return res
+
+    def inherited_action(self):
+        self.env["calendar.event.model"].create(
+            {
+                "name": "Test",
+                "line_ids": [
+                    Command.create({
+                        "field_1": "value_1",
+                      "field_2": "value_2",
+                    })
+                ],
+            }
+        )
+        return super().inherited_action()
